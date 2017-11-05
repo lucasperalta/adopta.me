@@ -1,0 +1,36 @@
+{  
+   "mascotas":[  
+      {  
+         "id":"0",
+         "edad":"5",
+         "tipoMascota":"perro",
+         "distancia":"distancia",
+         "raza":"mestizo",
+         "tamanio":"mediano",
+         "rescatista":{  
+            "nombre":"pepe",
+            "telefono":"12345",
+            "direccion":"araoz 1234",
+            "mail":"pepe@gmail.com"
+         },
+         "foto":"serializacion",
+         "estado":"disponible"
+      },
+      {  
+         "id":"1",
+         "edad":"1",
+         "tipoMascota":"gato",
+         "distancia":"2km",
+         "raza":"mestizo",
+         "tamanio":"chico",
+         "rescatista":{  
+            "nombre":"jose",
+            "telefono":"12345",
+            "direccion":"araoz 4444",
+            "mail":"pjose@gmail.com"
+         },
+         "foto":"serializacion",
+         "estado":"disponible"
+      }
+   ]
+}
