@@ -1,4 +1,24 @@
 {  
+   
+   "rescatistas":[
+                  {
+                   "id":"1",
+                   "nombre":"pepe",
+                   "telefono":"12345",
+                   "direccion":"araoz 1234",
+                   "mail":"pepe@gmail.com"
+                  },
+                  {  
+                   "id":"2",  
+                   "nombre":"jose",
+                   "telefono":"12345",
+                   "direccion":"araoz 4444",
+                   "mail":"pjose@gmail.com"
+                  }
+               
+   
+                  ],
+   
    "mascotas":[  
       {  
          "id":"0",
@@ -7,12 +27,7 @@
          "distancia":"distancia",
          "raza":"mestizo",
          "tamanio":"mediano",
-         "rescatista":{  
-            "nombre":"pepe",
-            "telefono":"12345",
-            "direccion":"araoz 1234",
-            "mail":"pepe@gmail.com"
-         },
+         "idRescatista":"1",
          "foto":"serializacion",
          "estado":"disponible"
       },
@@ -23,12 +38,7 @@
          "distancia":"2km",
          "raza":"mestizo",
          "tamanio":"chico",
-         "rescatista":{  
-            "nombre":"jose",
-            "telefono":"12345",
-            "direccion":"araoz 4444",
-            "mail":"pjose@gmail.com"
-         },
+         "idRescatista":"2",
          "foto":"serializacion",
          "estado":"disponible"
       }
