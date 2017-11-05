@@ -1,6 +1,7 @@
 package tpfinal.davinci.adoptame;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         //Si ambas existen significa que se hizo login anteriormente.
         if(!username.isEmpty() && !password.isEmpty()) {
             //Voy al menu de pizzas.
-          //  gotoPizzaMenu();
+           gotoFiltros();
         } else {
             //Defino el comportamiento para onClick del boton Ingresar.
             ingresarBtn .setOnClickListener(new View.OnClickListener() {
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                                 .putString("usuario", userEt.getText().toString())
                                 .putString("password", passwordEt.getText().toString())
                                 .apply();
-                       // gotoPizzaMenu();
+                        gotoFiltros();
                     }else{
                         Toast.makeText(context, "Usuario o password incorrectos", Toast.LENGTH_SHORT).show();
 
@@ -57,6 +58,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    private void gotoFiltros() {
+        //Llamo al ciclo de cierre del LoginActivity.
+        finish();
+        //Redirijo hacia el activit de filtros.
+       // startActivity(new Intent(context, NOMBREDELACTIVITY.class));
     }
 
 
