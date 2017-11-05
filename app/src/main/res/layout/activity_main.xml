@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="tpfinal.davinci.adoptame.MainActivity">
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="32sp"
+        android:text="Bienvenido"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/adoptameimagemain"
+        android:id="@+id/imageMain"
+        android:layout_marginTop="19dp"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Usuario"
+        android:id="@+id/usuarioEt"
+        android:layout_below="@+id/imageMain"
+        android:layout_alignLeft="@+id/imageMain"
+        android:layout_alignStart="@+id/imageMain"
+        android:layout_marginTop="28dp"
+        android:layout_alignRight="@+id/imageMain"
+        android:layout_alignEnd="@+id/imageMain" />
+
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="password"
+        android:inputType="textPassword"
+        android:id="@+id/passwordEt"
+        android:layout_below="@+id/usuarioEt"
+        android:layout_alignLeft="@+id/usuarioEt"
+        android:layout_alignStart="@+id/usuarioEt"
+        android:layout_marginTop="22dp"
+        android:layout_alignRight="@+id/usuarioEt"
+        android:layout_alignEnd="@+id/usuarioEt" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingresar"
+        android:layout_marginBottom="34dp"
+        android:id="@+id/ingresarBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
