@@ -23,23 +23,52 @@
       {  
          "id":"0",
          "edad":"5",
+         "nombre":"colita",
          "tipoMascota":"perro",
          "distancia":"distancia",
          "raza":"mestizo",
          "tamanio":"mediano",
          "idRescatista":"1",
-         "foto":"serializacion",
+         "idFoto":"1",
          "estado":"disponible"
       },
       {  
          "id":"1",
          "edad":"1",
+         "nombre":"mefistofeles",
          "tipoMascota":"gato",
          "distancia":"2km",
          "raza":"mestizo",
          "tamanio":"chico",
          "idRescatista":"2",
-         "foto":"serializacion",
+         "idFoto":"1",
+         "estado":"disponible"
+      }
+   ],
+   
+   "mascotasAgregadas":[  
+      {  
+         "id":"0",
+         "edad":"5",
+         "nombre":"sultan",
+         "tipoMascota":"perro",
+         "distancia":"distancia",
+         "raza":"mestizo",
+         "tamanio":"mediano",
+         "idRescatista":"1",
+         "idFoto":"1",
+         "estado":"disponible"
+      },
+      {  
+         "id":"1",
+         "edad":"1",
+         "nombre":"pochi",
+         "tipoMascota":"perro",
+         "distancia":"2km",
+         "raza":"mestizo",
+         "tamanio":"chico",
+         "idRescatista":"1",
+         "idFoto":"1",
          "estado":"disponible"
       }
    ]
