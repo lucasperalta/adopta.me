@@ -29,7 +29,7 @@
          "raza":"mestizo",
          "tamanio":"mediano",
          "idRescatista":"1",
-         "idFoto":"1",
+         "imgUrl":"https://www.anipedia.net/imagenes/que-comen-los-perros.jpg",
          "estado":"disponible"
       },
       {  
@@ -41,7 +41,7 @@
          "raza":"mestizo",
          "tamanio":"chico",
          "idRescatista":"2",
-         "idFoto":"1",
+         "imgUrl":"https://www.anipedia.net/imagenes/que-comen-los-perros.jpg",
          "estado":"disponible"
       }
    ],
