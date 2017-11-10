@@ -41,7 +41,7 @@
          "raza":"mestizo",
          "tamanio":"chico",
          "idRescatista":"2",
-         "imgUrl":"https://www.anipedia.net/imagenes/que-comen-los-perros.jpg",
+         "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/220px-Cat_November_2010-1a.jpg",
          "estado":"disponible"
       }
    ],
@@ -56,7 +56,7 @@
          "raza":"mestizo",
          "tamanio":"mediano",
          "idRescatista":"1",
-         "idFoto":"1",
+         "imgUrl":"https://www.anipedia.net/imagenes/que-comen-los-perros.jpg",
          "estado":"disponible"
       },
       {  
@@ -68,7 +68,7 @@
          "raza":"mestizo",
          "tamanio":"chico",
          "idRescatista":"1",
-         "idFoto":"1",
+         "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/220px-Cat_November_2010-1a.jpg",
          "estado":"disponible"
       }
    ]
