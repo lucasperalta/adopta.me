@@ -28,6 +28,7 @@
          "distancia":"distancia",
          "raza":"mestizo",
          "tamanio":"mediano",
+         "descripcion":"Alto Perro",
          "idRescatista":"1",
          "imgUrl":"https://www.anipedia.net/imagenes/que-comen-los-perros.jpg",
          "estado":"disponible"
@@ -41,6 +42,7 @@
          "raza":"mestizo",
          "tamanio":"chico",
          "idRescatista":"2",
+         "descripcion":"Alto michu",
          "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/220px-Cat_November_2010-1a.jpg",
          "estado":"disponible"
       }
@@ -55,6 +57,7 @@
          "distancia":"distancia",
          "raza":"mestizo",
          "tamanio":"mediano",
+         "descripcion":"Alto Perro",
          "idRescatista":"1",
          "imgUrl":"https://www.anipedia.net/imagenes/que-comen-los-perros.jpg",
          "estado":"disponible"
@@ -67,6 +70,7 @@
          "distancia":"2km",
          "raza":"mestizo",
          "tamanio":"chico",
+         "descripcion":"Alto michu",         
          "idRescatista":"1",
          "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/220px-Cat_November_2010-1a.jpg",
          "estado":"disponible"
