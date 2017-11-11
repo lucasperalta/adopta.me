@@ -29,6 +29,7 @@
          "raza":"mestizo",
          "tamanio":"mediano",
          "descripcion":"Alto Perro",
+         "sexo":"macho",
          "idRescatista":"1",
          "imgUrl":"https://www.anipedia.net/imagenes/que-comen-los-perros.jpg",
          "estado":"disponible"
@@ -40,6 +41,7 @@
          "tipoMascota":"gato",
          "distancia":"2km",
          "raza":"mestizo",
+          "sexo":"hembra",
          "tamanio":"chico",
          "idRescatista":"2",
          "descripcion":"Alto michu",
