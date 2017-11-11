@@ -1,5 +1,20 @@
 {  
+      "usuarios":[
+                  {
+                   "id":"1",
+                   "usuario":"lucas",
+                   "password":"12345",
+                   
+                  },
+                  {  
+                   "id":"2",  
+                   "nombre":"camila",
+                   "password":"12345",
+                   
+                  }
+               
    
+                  ],
    "rescatistas":[
                   {
                    "id":"1",
