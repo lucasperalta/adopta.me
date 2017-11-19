@@ -1,12 +1,10 @@
 package tpfinal.davinci.adoptame;
 
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -25,7 +23,7 @@ import tpfinal.davinci.adoptame.api.AdoptameAPI;
 import tpfinal.davinci.adoptame.model.Filtros;
 import tpfinal.davinci.adoptame.model.Mascota;
 
-public class ListarMascotasActivity extends AppCompatActivity {
+public class ListarMisMascotasActivity extends AppCompatActivity {
 
     RecyclerView recyclerView ;
     MascotaAdapter mascotaAdapter;
@@ -33,10 +31,28 @@ public class ListarMascotasActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Fresco.initialize(this);
-        setContentView(R.layout.activity_listar_mascotas);
+        setContentView(R.layout.mis_mascotas_lv);
+
+    List<Mascota> mascotas= new ArrayList<>();
+
+        Mascota mascota= new Mascota();
+        mascota.setNombre("pirulo");
+        mascota.setRaza("mestizo");
+        mascota.setEdad(12);
+        mascotas.add(mascota);
+        mascotas.add(mascota);
+        mascotas.add(mascota);
+        mascotas.add(mascota);
+        mascotas.add(mascota);
+        mascotas.add(mascota);
+        mascotas.add(mascota);
+        mascotas.add(mascota);
+        mascotas.add(mascota);
 
 
+        ListView misMascotasLv = (ListView) findViewById(R.id.misMascota_lv);
+        misMascotasLv.setAdapter(new MisMascotasAdapter(getBaseContext(), mascotas));
+/*
         Retrofit.Builder builder = new Retrofit.Builder()
                 .baseUrl(AdoptameAPI.END_POINT_URL)
                 .addConverterFactory(GsonConverterFactory.create());
@@ -45,17 +61,12 @@ public class ListarMascotasActivity extends AppCompatActivity {
 
         AdoptameAPI client = retrofit.create(AdoptameAPI.class);
 
-        //TODO recuperar filtros desde las shared
-        SharedPreferences sharedPreferences = getSharedPreferences(getResources().getString(R.string.app_name), MODE_PRIVATE);
-        Filtros filtros = new Gson().fromJson(sharedPreferences.getString("filtros", null), Filtros.class);
 
-
-
-        Call<List<Mascota>> call = client.getMascotas(filtros.toMap());
+        Call<List<Mascota>> call = client.getMascotas(null);
 
 
         recyclerView = (RecyclerView) findViewById(R.id.listaMascotasView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         mascotaAdapter = new MascotaAdapter(this);
 
 
@@ -73,9 +84,9 @@ public class ListarMascotasActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Mascota>> call, Throwable t) {
-                Toast.makeText(ListarMascotasActivity.this, "error :(", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ListarMisMascotasActivity.this, "error :(", Toast.LENGTH_SHORT).show();
             }
         });
-
+*/
     }
 }

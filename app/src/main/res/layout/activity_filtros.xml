@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:fillViewport="true"
+    android:layout_height="wrap_content" >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_filtros"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.alumno.adoptame.FiltrosActivity">
+
+
+
+
+
+
+
+   <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Distancia"
+        android:textSize="22dp"
+        android:paddingLeft="120dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/title_dist"
+
+        />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/title_dist"
+        android:id="@+id/seekDistancia"
+        android:max="200"
+        android:progress="50"
+        android:thumb="@drawable/custom_thumb"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Busco"
+        android:textSize="22dp"
+        android:paddingLeft="140dp"
+        android:layout_marginTop="95dp"
+        android:id="@+id/title_Bus"
+        android:layout_below="@+id/seekDistancia"
+
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Perro"
+        android:textSize="22dp"
+        android:paddingLeft="50dp"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/title_Bus"
+        android:id="@+id/Opt_Perro"
+
+        />
+
+    <Switch
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="18dp"
+        android:id="@+id/switchPerro"
+        android:textOff="OFF"
+        android:textOn="ON"
+        android:layout_below="@+id/title_Bus"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gato"
+        android:textSize="22dp"
+        android:paddingLeft="50dp"
+        android:layout_marginTop="14dp"
+        android:id="@+id/Opt_Gato"
+        android:layout_below="@+id/Opt_Perro"
+
+        />
+    <Switch
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="14dp"
+        android:id="@+id/switchGato"
+        android:textOff="OFF"
+        android:textOn="ON"
+        android:layout_below="@+id/switchPerro"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edad"
+        android:textSize="22dp"
+        android:paddingLeft="150dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/title_Edad"
+        android:layout_below="@+id/seekDistancia"
+        />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="15dp"
+        android:id="@+id/SeekEdad"
+        android:layout_below="@+id/title_Edad"
+        android:thumb="@drawable/custom_thumb"
+
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sexo"
+        android:textSize="22dp"
+        android:paddingLeft="150dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/switchGato"
+        android:id="@+id/title_Sexo" />
+
+    <RadioGroup
+        android:id="@+id/radioSexoGrp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/title_Sexo">
+        <RadioButton
+            android:id="@+id/radioHem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hembra"
+            android:layout_marginLeft="25dp"
+
+            android:textSize="20dp"
+            />
+        <RadioButton android:id="@+id/radioMacho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Macho"
+            android:layout_marginLeft="90dp" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tamaño"
+        android:textSize="22dp"
+        android:paddingLeft="140dp"
+        android:layout_marginTop="50dp"
+        android:id="@+id/title_Tmn"
+        android:layout_below="@+id/title_Sexo"
+
+        />
+
+    <CheckBox
+        android:text="Pequeño"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_Tmn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/checkBoxPeque"
+        android:textSize="20dp"
+        />
+
+    <CheckBox
+        android:text="Mediano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_Tmn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/checkBoxMed"
+        android:textSize="20dp"
+        />
+    <CheckBox
+        android:text="Grande"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_Tmn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="245dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/checkBoxGrd"
+        android:textSize="20dp"
+        />
+
+    <Button
+        android:text="Buscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBoxMed"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/BtnBuscar"
+        android:padding="10dp"/>
+
+
+
+</RelativeLayout>
+
+
+</ScrollView>

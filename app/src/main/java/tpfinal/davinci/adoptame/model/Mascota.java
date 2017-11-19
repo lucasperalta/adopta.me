@@ -12,8 +12,19 @@ public class Mascota {
     private String raza;
     private String mediano;
     private String nombre;
+    private String descripcion;
     private Rescatista rescatista;
-    private int idFoto;
+    private String estado;
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    private String imgUrl;
 
     public String getNombre() {
         return nombre;
@@ -79,13 +90,7 @@ public class Mascota {
         this.rescatista = rescatista;
     }
 
-    public int getIdFoto() {
-        return idFoto;
-    }
 
-    public void setIdFoto(int idFoto) {
-        this.idFoto = idFoto;
-    }
 
     public String getEstado() {
         return estado;
@@ -95,7 +100,13 @@ public class Mascota {
         this.estado = estado;
     }
 
-    private String estado;
 
 
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
 }

@@ -17,4 +17,8 @@ public interface AdoptameAPI {
     @GET("/lucasperalta/adopta.me/mascotas")
     public Call<List<Mascota>> getMascotas(@QueryMap Map<String, String> filtros);
 
+    @GET("/lucasperalta/adopta.me/usuarios")
+    public Call<List<Usuario>> getUsuario(@QueryMap Map<String, String> usuarioMap);
+
+
 }

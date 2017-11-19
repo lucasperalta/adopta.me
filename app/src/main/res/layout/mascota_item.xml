@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/fotoMascota"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:placeholderImage="@drawable/mascota1"/>
+
+
+    <TextView
+        android:id="@+id/nombreMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:text="nombre"
+        android:textColor="@android:color/black"
+        android:layout_marginRight="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_alignBaseline="@+id/edadMascota"
+        android:layout_alignBottom="@+id/edadMascota"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/edadMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:text="edad"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="86dp"
+        android:layout_below="@+id/fotoMascota"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/razaMascota"
+    android:textSize="30sp"
+    android:textColor="@android:color/black"
+    android:text="raza"
+    android:layout_marginTop="41dp"
+    android:layout_marginRight="44dp"
+    android:layout_marginEnd="44dp"
+    android:layout_below="@+id/nombreMascota"
+    android:layout_toLeftOf="@+id/nombreMascota"
+    android:layout_toStartOf="@+id/nombreMascota" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/descripcionMascota"
+        android:textSize="30sp"
+        android:textColor="@android:color/black"
+        android:text="descripcion"
+        android:layout_marginTop="52dp"
+        android:layout_below="@+id/razaMascota"
+        android:layout_toLeftOf="@+id/nombreMascota"
+        android:layout_toStartOf="@+id/nombreMascota" />
+
+
+</RelativeLayout>

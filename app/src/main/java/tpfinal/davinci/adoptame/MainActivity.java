@@ -10,6 +10,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Collections;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+import tpfinal.davinci.adoptame.api.AdoptameAPI;
+import tpfinal.davinci.adoptame.model.Mascota;
+import tpfinal.davinci.adoptame.model.Usuario;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText userEt;
@@ -42,34 +54,64 @@ public class MainActivity extends AppCompatActivity {
             ingresarBtn .setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (isLoginSuccessful(userEt.getText().toString(), passwordEt.getText().toString())) {
-                        //persistencia resuelta con SharedPreferences
-                        sharedPreferences = context.getSharedPreferences(getResources().getString(R.string.app_name), MODE_PRIVATE);
-                        //Guardo asincronicamente las credenciales de logueo
-                        sharedPreferences.edit()
-                                .putString("usuario", userEt.getText().toString())
-                                .putString("password", passwordEt.getText().toString())
-                                .apply();
-                        gotoFiltros();
-                    }else{
-                        Toast.makeText(context, "Usuario o password incorrectos", Toast.LENGTH_SHORT).show();
+                    isLoginSuccessful(userEt.getText().toString(), passwordEt.getText().toString()) ;
 
-                    }
+
                 }
             });
         }
     }
 
     private void gotoFiltros() {
-        //Llamo al ciclo de cierre del LoginActivity.
+        //Llamo al ciclo de cierre del mainactivity.
         finish();
         //Redirijo hacia el activit de filtros.
-       // startActivity(new Intent(context, NOMBREDELACTIVITY.class));
+       startActivity(new Intent(context, FiltrosActivity.class));
     }
 
 
-    private boolean isLoginSuccessful(String username, String password) {
-        return username.equals("lucas") && password.equals("1234");
+    private void isLoginSuccessful(String username, String password) {
+
+        Retrofit.Builder builder = new Retrofit.Builder()
+                .baseUrl(AdoptameAPI.END_POINT_URL)
+                .addConverterFactory(GsonConverterFactory.create());
+
+        Retrofit retrofit = builder.build();
+
+        AdoptameAPI client = retrofit.create(AdoptameAPI.class);
+        Usuario usuario = new Usuario( username, password);
+        Call<List<Usuario>> call = client.getUsuario(usuario.toMap());
+
+
+        call.enqueue(new Callback<List<Usuario>>() {
+            @Override
+            public void onResponse(Call<List<Usuario>> call, Response<List<Usuario>> response) {
+                //recibe la respuesta de API
+                List<Usuario> usuarios = response.body();
+
+                if (usuarios!=null && !usuarios.isEmpty()) {
+                    //persistencia resuelta con SharedPreferences
+                    sharedPreferences = context.getSharedPreferences(getResources().getString(R.string.app_name), MODE_PRIVATE);
+                    //Guardo asincronicamente las credenciales de logueo
+                    sharedPreferences.edit()
+                            .putString("usuario", userEt.getText().toString())
+                            .putString("password", passwordEt.getText().toString())
+                            .apply();
+                    gotoFiltros();
+                }
+                else{
+                    Toast.makeText(context, "Usuario o password incorrectos", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Usuario>> call, Throwable t) {
+                Toast.makeText(context, "Error al comunica con la API", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+      //  return username.equals("lucas") && password.equals("1234");
     }
 
 
