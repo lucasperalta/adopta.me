@@ -1,5 +1,20 @@
 {  
+      "usuarios":[
+                  {
+                   "id":"1",
+                   "usuario":"lucas",
+                   "password":"12345"
+                   
+                  },
+                  {  
+                   "id":"2",  
+                   "nombre":"camila",
+                   "password":"12345"
+                   
+                  }
+               
    
+                  ],
    "rescatistas":[
                   {
                    "id":"1",
@@ -28,8 +43,10 @@
          "distancia":"distancia",
          "raza":"mestizo",
          "tamanio":"mediano",
+         "descripcion":"Alto Perro",
+         "sexo":"macho",
          "idRescatista":"1",
-         "idFoto":"1",
+         "imgUrl":"https://www.anipedia.net/imagenes/que-comen-los-perros.jpg",
          "estado":"disponible"
       },
       {  
@@ -39,9 +56,11 @@
          "tipoMascota":"gato",
          "distancia":"2km",
          "raza":"mestizo",
+          "sexo":"hembra",
          "tamanio":"chico",
          "idRescatista":"2",
-         "idFoto":"1",
+         "descripcion":"Alto michu",
+         "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/220px-Cat_November_2010-1a.jpg",
          "estado":"disponible"
       }
    ],
@@ -55,8 +74,9 @@
          "distancia":"distancia",
          "raza":"mestizo",
          "tamanio":"mediano",
+         "descripcion":"Alto Perro",
          "idRescatista":"1",
-         "idFoto":"1",
+         "imgUrl":"https://www.anipedia.net/imagenes/que-comen-los-perros.jpg",
          "estado":"disponible"
       },
       {  
@@ -67,8 +87,9 @@
          "distancia":"2km",
          "raza":"mestizo",
          "tamanio":"chico",
+         "descripcion":"Alto michu",         
          "idRescatista":"1",
-         "idFoto":"1",
+         "imgUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/220px-Cat_November_2010-1a.jpg",
          "estado":"disponible"
       }
    ]
