@@ -20,19 +20,19 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import tpfinal.davinci.adoptame.api.AdoptameAPI;
-import tpfinal.davinci.adoptame.model.Filtros;
 import tpfinal.davinci.adoptame.model.Mascota;
 
 public class ListarMisMascotasActivity extends AppCompatActivity {
 
-    RecyclerView recyclerView ;
-    MascotaAdapter mascotaAdapter;
+    MisMascotasAdapter misMascotasAdapter;
+    ListView misMascotasLv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fresco.initialize(this);
         setContentView(R.layout.mis_mascotas_lv);
-
+/*
     List<Mascota> mascotas= new ArrayList<>();
 
         Mascota mascota= new Mascota();
@@ -48,11 +48,10 @@ public class ListarMisMascotasActivity extends AppCompatActivity {
         mascotas.add(mascota);
         mascotas.add(mascota);
         mascotas.add(mascota);
+*/
+        misMascotasAdapter= new MisMascotasAdapter(getBaseContext());
+        misMascotasLv = (ListView) findViewById(R.id.misMascota_lv);
 
-
-        ListView misMascotasLv = (ListView) findViewById(R.id.misMascota_lv);
-        misMascotasLv.setAdapter(new MisMascotasAdapter(getBaseContext(), mascotas));
-/*
         Retrofit.Builder builder = new Retrofit.Builder()
                 .baseUrl(AdoptameAPI.END_POINT_URL)
                 .addConverterFactory(GsonConverterFactory.create());
@@ -62,23 +61,15 @@ public class ListarMisMascotasActivity extends AppCompatActivity {
         AdoptameAPI client = retrofit.create(AdoptameAPI.class);
 
 
-        Call<List<Mascota>> call = client.getMascotas(null);
-
-
-        recyclerView = (RecyclerView) findViewById(R.id.listaMascotasView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        mascotaAdapter = new MascotaAdapter(this);
-
-
-        recyclerView = (RecyclerView) findViewById(R.id.listaMascotasView);
+        Call<List<Mascota>> call = client.getMascotasAgregadas("1");
 
 
         call.enqueue(new Callback<List<Mascota>>() {
             @Override
             public void onResponse(Call<List<Mascota>> call, Response<List<Mascota>> response) {
                 List<Mascota> mascotas = response.body();
-                mascotaAdapter.setMascotaList(mascotas);
-                recyclerView.setAdapter(mascotaAdapter);
+                misMascotasAdapter.setMisMascotas(mascotas);
+                misMascotasLv.setAdapter(misMascotasAdapter);
 
             }
 
@@ -87,6 +78,6 @@ public class ListarMisMascotasActivity extends AppCompatActivity {
                 Toast.makeText(ListarMisMascotasActivity.this, "error :(", Toast.LENGTH_SHORT).show();
             }
         });
-*/
+
     }
 }

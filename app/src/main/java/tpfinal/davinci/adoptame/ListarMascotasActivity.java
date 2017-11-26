@@ -45,7 +45,6 @@ public class ListarMascotasActivity extends AppCompatActivity {
 
         AdoptameAPI client = retrofit.create(AdoptameAPI.class);
 
-        //TODO recuperar filtros desde las shared
         SharedPreferences sharedPreferences = getSharedPreferences(getResources().getString(R.string.app_name), MODE_PRIVATE);
         Filtros filtros = new Gson().fromJson(sharedPreferences.getString("filtros", null), Filtros.class);
 

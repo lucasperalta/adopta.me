@@ -15,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListarMisMascotasActivity">
+        <activity android:name=".ListarMascotasActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,7 +25,7 @@
         <activity android:name=".MainActivity" />
 
         <activity android:name=".AgregarMascotaActivity" />
-        <activity android:name=".ListarMascotasActivity" />
+        <activity android:name=".ListarMisMascotasActivity" />
         <activity android:name=".FiltrosActivity"></activity>
     </application>
 

@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:fillViewport="true"
+    android:layout_height="wrap_content" >
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
@@ -8,10 +12,13 @@
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/fotoMascota"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        fresco:actualImageScaleType="centerCrop"
-        fresco:placeholderImage="@drawable/mascota1"/>
+        android:layout_marginTop="40dp"
 
+        android:layout_height="300dp"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:placeholderImage="@drawable/mascota1"
+
+        />
 
     <TextView
         android:id="@+id/nombreMascota"
@@ -19,14 +26,15 @@
         android:layout_height="wrap_content"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:text="nombre"
+        android:text="Nombre"
         android:textColor="@android:color/black"
-        android:layout_marginRight="35dp"
-        android:layout_marginEnd="35dp"
-        android:layout_alignBaseline="@+id/edadMascota"
-        android:layout_alignBottom="@+id/edadMascota"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/fotoMascota"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        />
 
     <TextView
         android:id="@+id/edadMascota"
@@ -34,39 +42,54 @@
         android:layout_height="wrap_content"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:text="edad"
+        android:text="Edad"
         android:textColor="@android:color/black"
-        android:layout_marginTop="86dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginEnd="150dp"
         android:layout_below="@+id/fotoMascota"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp" />
+        android:layout_marginTop="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/fotoSexo"
+        android:layout_below="@+id/fotoMascota"
+        android:src="@drawable/malesymbol"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="22dp"
+        android:textColor="@android:color/black"
+
+
+        />
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/razaMascota"
-    android:textSize="30sp"
     android:textColor="@android:color/black"
-    android:text="raza"
-    android:layout_marginTop="41dp"
-    android:layout_marginRight="44dp"
-    android:layout_marginEnd="44dp"
+    android:text="Raza"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="20dp"
+    android:textSize="30dp"
     android:layout_below="@+id/nombreMascota"
-    android:layout_toLeftOf="@+id/nombreMascota"
-    android:layout_toStartOf="@+id/nombreMascota" />
+    android:textStyle="bold"
+
+
+
+    />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:id="@+id/descripcionMascota"
         android:textSize="30sp"
         android:textColor="@android:color/black"
         android:text="descripcion"
-        android:layout_marginTop="52dp"
+        android:layout_margin="20dp"
         android:layout_below="@+id/razaMascota"
-        android:layout_toLeftOf="@+id/nombreMascota"
-        android:layout_toStartOf="@+id/nombreMascota" />
 
+        />
 
 </RelativeLayout>
+</ScrollView>

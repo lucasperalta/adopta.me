@@ -8,6 +8,7 @@ import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
 import tpfinal.davinci.adoptame.model.*;
 public interface AdoptameAPI {
@@ -19,6 +20,9 @@ public interface AdoptameAPI {
 
     @GET("/lucasperalta/adopta.me/usuarios")
     public Call<List<Usuario>> getUsuario(@QueryMap Map<String, String> usuarioMap);
+
+    @GET("/lucasperalta/adopta.me/mascotasAgregadas")
+    public Call<List<Mascota>> getMascotasAgregadas(@Query("idRescatista") String idRescatista);
 
 
 }
