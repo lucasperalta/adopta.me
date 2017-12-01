@@ -1,10 +1,15 @@
 package tpfinal.davinci.adoptame;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.LoginFilter;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -26,6 +31,7 @@ public class ListarMisMascotasActivity extends AppCompatActivity {
 
     MisMascotasAdapter misMascotasAdapter;
     ListView misMascotasLv;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,5 +85,44 @@ public class ListarMisMascotasActivity extends AppCompatActivity {
             }
         });
 
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // action with ID action_refresh was selected
+            case R.id.actionFiltros:
+                Intent filtros = new Intent(this, FiltrosActivity.class);
+                startActivity(filtros);
+                break;
+            // action with ID action_settings was selected
+            case R.id.actionMisMascotas:
+
+                Toast.makeText(this, "Ya estas en Mis Mascotas", Toast.LENGTH_SHORT)
+                        .show();
+                break;
+            case R.id.actionLogout:
+                //persistencia resuelta con SharedPreferences
+                sharedPreferences = this.getSharedPreferences(getResources().getString(R.string.app_name), MODE_PRIVATE);
+                //Guardo asincronicamente las credenciales de logueo
+                sharedPreferences.edit()
+                        .putString("usuario", "")
+                        .putString("password", "")
+                        .apply();                Intent login = new Intent(this, MainActivity.class);
+                startActivity(login);
+                finish();
+                break;
+
+            default:
+                break;
+        }
+
+        return true;
     }
 }

@@ -5,13 +5,19 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -26,6 +32,8 @@ public class FiltrosActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filtros);
+
+
         context=this;
         final SeekBar distanciaBar = (SeekBar) findViewById(R.id.seekDistancia);
         final Switch switchPerro = (Switch) findViewById(R.id.switchPerro);
@@ -33,6 +41,9 @@ public class FiltrosActivity extends AppCompatActivity {
         final RadioButton radioHemb = (RadioButton) findViewById(R.id.radioHem);
         final RadioButton radioMacho = (RadioButton) findViewById(R.id.radioMacho);
         final RadioGroup radiosSexo=(RadioGroup) findViewById(R.id.radioSexoGrp);
+        final CheckBox checkPeq=(CheckBox)findViewById(R.id.checkBoxPeque);
+        final CheckBox checkMed=(CheckBox)findViewById(R.id.checkBoxMed);
+        final CheckBox checkGran=(CheckBox)findViewById(R.id.checkBoxGrd);
 
 
         Button buscarBtn = (Button) findViewById(R.id.BtnBuscar);
@@ -64,15 +75,33 @@ public class FiltrosActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 distanciaBar.getProgress();
-                switchGato.isChecked();
+                String tipoMascota = null;
+
+
+               if (switchPerro.isChecked()){
+                    tipoMascota="perro";
+               }
+
+                if (switchGato.isChecked()){
+                    tipoMascota="gato";
+                }
+
                 int radioId= radiosSexo.getCheckedRadioButtonId();
                 RadioButton radioButton =(RadioButton) radiosSexo.findViewById(radioId);
 
                 switchPerro.isChecked();
                 Filtros filtros= new Filtros();
-                filtros.setSexo(radioButton.getText().toString().toLowerCase());
+                if(radioButton!=null){
+                    filtros.setSexo(radioButton.getText().toString().toLowerCase());
+
+                }
+                if(tipoMascota!=null){
+                    filtros.setTipoMascota(tipoMascota);
+                }
+
+                //TODO no filtra por tamañom pq no se hacer filtrso combinados todaviva
+
                 sharedPreferences = context.getSharedPreferences(getResources().getString(R.string.app_name), MODE_PRIVATE);
-                //Guardo asincronicamente las credenciales de logueo
                 sharedPreferences.edit()
                         .putString("filtros", new Gson().toJson(filtros))
                         .apply();
@@ -89,5 +118,44 @@ public class FiltrosActivity extends AppCompatActivity {
         finish();
         //Redirijo hacia el MainActivity.
         startActivity(new Intent(context, ListarMascotasActivity.class));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // action with ID action_refresh was selected
+            case R.id.actionFiltros:
+                Toast.makeText(this, "Ya estas en Filtros", Toast.LENGTH_SHORT)
+                        .show();
+                break;
+            // action with ID action_settings was selected
+            case R.id.actionMisMascotas:
+                Intent misMascotas = new Intent(this, ListarMisMascotasActivity.class);
+                startActivity(misMascotas);
+                break;
+            case R.id.actionLogout:
+                //persistencia resuelta con SharedPreferences
+                sharedPreferences = context.getSharedPreferences(getResources().getString(R.string.app_name), MODE_PRIVATE);
+                //Guardo asincronicamente las credenciales de logueo
+                sharedPreferences.edit()
+                        .putString("usuario", "")
+                        .putString("password", "")
+                        .apply();
+                Intent login = new Intent(this, MainActivity.class);
+                startActivity(login);
+                finish();
+                break;
+            default:
+                break;
+        }
+
+        return true;
     }
 }
