@@ -114,6 +114,10 @@ public class ListarMascotasActivity extends AppCompatActivity {
                 startActivity(login);
                 finish();
                 break;
+            case R.id.actionAgregarMascotas:
+                Intent agregarMascotas = new Intent(this, AgregarMascotaActivity.class);
+                startActivity(agregarMascotas);
+                break;
             default:
                 break;
         }
