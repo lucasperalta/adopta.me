@@ -80,16 +80,16 @@ public class MainActivity extends AppCompatActivity {
 
         AdoptameAPI client = retrofit.create(AdoptameAPI.class);
         Usuario usuario = new Usuario( username, password);
-        Call<List<Usuario>> call = client.getUsuario(usuario.toMap());
+        Call<Usuario> call = client.getUsuario(usuario.toMap());
 
 
-        call.enqueue(new Callback<List<Usuario>>() {
+        call.enqueue(new Callback<Usuario>() {
             @Override
-            public void onResponse(Call<List<Usuario>> call, Response<List<Usuario>> response) {
+            public void onResponse(Call<Usuario> call, Response<Usuario> response) {
                 //recibe la respuesta de API
-                List<Usuario> usuarios = response.body();
+                Usuario usuario = response.body();
 
-                if (usuarios!=null && !usuarios.isEmpty()) {
+                if (usuario!=null && !usuario.getEmail().isEmpty() ) {
                     //persistencia resuelta con SharedPreferences
                     sharedPreferences = context.getSharedPreferences(getResources().getString(R.string.app_name), MODE_PRIVATE);
                     //Guardo asincronicamente las credenciales de logueo
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<List<Usuario>> call, Throwable t) {
+            public void onFailure(Call<Usuario> call, Throwable t) {
                 Toast.makeText(context, "Error al comunica con la API", Toast.LENGTH_SHORT).show();
             }
         });

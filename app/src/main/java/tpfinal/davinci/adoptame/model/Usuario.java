@@ -7,21 +7,25 @@ import java.util.Map;
  * Created by lucas on 11/10/17.
  */
 
-public class Usuario {
+public class Usuario extends Persona {
 
-    private String usuario;
+    private String estado;
+
+
     private String password;
 
 
-    public Usuario(String usuario, String password) {
-        this.usuario = usuario;
-        this.password = password;
+    private  String rol;
+
+    public Usuario(String email,String password) {
+        this.email = email;
+        this.password=password;
     }
 
     public Map<String,String> toMap(){
         Map<String, String> data = new HashMap<String,String>();
-        if(usuario!=null){
-            data.put("usuario",usuario);
+        if(getEmail()!=null){
+            data.put("usuario",getEmail());
         }
         if(password!=null){
             data.put("password",password);
@@ -35,13 +39,12 @@ public class Usuario {
     }
 
 
-
-    public String getUsuario() {
-        return usuario;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public String getPassword() {
@@ -52,5 +55,11 @@ public class Usuario {
         this.password = password;
     }
 
+    public String getRol() {
+        return rol;
+    }
 
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
 }
