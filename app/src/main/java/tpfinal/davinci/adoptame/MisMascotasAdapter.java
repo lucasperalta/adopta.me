@@ -69,7 +69,7 @@ public class MisMascotasAdapter extends BaseAdapter {
         nombre.setText(mascota.getNombre());
         edad.setText(String.valueOf(mascota.getEdad()));
         raza.setText(mascota.getRaza());
-        Uri uri = Uri.parse(mascota.getImgUrl());
+        Uri uri = Uri.parse(mascota.getFoto_url());
         image.setImageURI(uri);
 
 

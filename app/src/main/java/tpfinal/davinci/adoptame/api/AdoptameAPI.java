@@ -15,7 +15,7 @@ public interface AdoptameAPI {
 
     public static final String END_POINT_URL="http://10.0.2.2:8090";
 
-    @GET("/lucasperalta/adopta.me/mascotas")
+    @GET("/mascotas/todos")
     public Call<List<Mascota>> getMascotas(@QueryMap Map<String, String> filtros);
 
  //   @GET("/lucasperalta/adopta.me/usuarios")

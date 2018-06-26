@@ -58,7 +58,7 @@ class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaViewHold
 
         mascotaViewHolder.descripcion.setText(mascota.getDescripcion());
 
-        Uri uri = Uri.parse(mascota.getImgUrl());
+        Uri uri = Uri.parse(mascota.getFoto_url());
 
         mascotaViewHolder.image.setImageURI(uri);
     }
