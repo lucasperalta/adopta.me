@@ -1,8 +1,6 @@
 package tpfinal.davinci.adoptame.model;
 
-/**
- * Created by lucas on 11/5/17.
- */
+
 
 public class Rescatista {
     private String nombre;

@@ -3,9 +3,7 @@ package tpfinal.davinci.adoptame.model;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by lucas on 11/5/17.
- */
+
 
 public class Filtros {
 

@@ -1,8 +1,6 @@
 package tpfinal.davinci.adoptame.model;
 
-/**
- * Created by lucas on 11/5/17.
- */
+
 
 public class Mascota {
     private int id;
