@@ -1,8 +1,5 @@
 package tpfinal.davinci.adoptame.api;
 
-/**
- * Created by lucas on 11/5/17.
- */
 import java.util.List;
 import java.util.Map;
 

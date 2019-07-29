@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         String password = sharedPreferences.getString("password", "");
         //Si ambas existen significa que se hizo login anteriormente.
         if(!username.isEmpty() && !password.isEmpty()) {
-            //Voy al menu de pizzas.
+
            gotoFiltros();
         } else {
             //Defino el comportamiento para onClick del boton Ingresar.
