@@ -1,6 +1,6 @@
 # adopta.me
 
-GEt mascota
+ta
 
 https://my-json-server.typicode.com/lucasperalta/adopta.me/mascotas/0
 
