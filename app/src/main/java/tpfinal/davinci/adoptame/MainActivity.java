@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-      //  return username.equals("lucas") && password.equals("1234");
+      //  return username.equals("lucas") && password.equals("12345678");
     }
 
 
