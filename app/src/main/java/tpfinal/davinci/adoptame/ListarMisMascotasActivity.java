@@ -3,20 +3,16 @@ package tpfinal.davinci.adoptame;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.text.LoginFilter;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.facebook.drawee.backends.pipeline.Fresco;
-import com.google.gson.Gson;
+import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
+import com.facebook.drawee.backends.pipeline.Fresco;
+
 import java.util.List;
 
 import retrofit2.Call;

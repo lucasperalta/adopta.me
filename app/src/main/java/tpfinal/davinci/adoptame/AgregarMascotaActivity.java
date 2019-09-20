@@ -2,7 +2,6 @@ package tpfinal.davinci.adoptame;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -34,6 +33,8 @@ import java.io.BufferedReader;
 import java.net.URLEncoder;
 import java.io.UnsupportedEncodingException;
 import android.util.Base64;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class AgregarMascotaActivity extends AppCompatActivity {
 

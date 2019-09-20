@@ -9,16 +9,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.facebook.drawee.view.SimpleDraweeView
-        android:id="@+id/fotoMascota"
-        android:layout_width="match_parent"
-        android:layout_marginTop="40dp"
 
-        android:layout_height="300dp"
-        fresco:actualImageScaleType="centerCrop"
-        fresco:placeholderImage="@drawable/mascota1"
-
-        />
 
     <TextView
         android:id="@+id/nombreMascota"
